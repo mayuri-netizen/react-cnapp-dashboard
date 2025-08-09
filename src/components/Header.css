@@ -1,0 +1,130 @@
+.app-header {
+    background-color: var(--color-surface);
+    padding: 0.75rem 2rem;
+    border-bottom: 1px solid var(--color-border);
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.header-left {
+    flex-shrink: 0;
+
+}
+
+.breadcrumb {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+}
+
+.breadcrumb .current-page {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    gap: 1rem;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-primary) 25%, transparent);
+    border-color: var(--color-primary);
+}
+
+.search-icon {
+    margin-right: 0.5rem;
+    color: var(--color-text-secondary);
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    width: 200px;
+    color: var(--color-text-primary);
+}
+
+/* This ensures the calendar popup appears above other content */
+.react-datepicker-popper {
+    z-index: 10;
+}
+
+.date-picker-wrapper .date-picker-input {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-primary);
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
+    width: 240px;
+
+    text-align: center;
+}
+
+.profile-wrapper {
+    position: relative;
+}
+
+.header-button {
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.profile-button {
+    padding: 0.5rem 1rem;
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    box-shadow: 0 4px 12px var(--color-shadow);
+    z-index: 100;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.profile-dropdown a {
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.profile-dropdown a:hover {
+    background-color: var(--color-surface-hover);
+}
+
+@media (max-width: 1200px) {
+    .app-header {
+        justify-content: center;
+    }
+}
