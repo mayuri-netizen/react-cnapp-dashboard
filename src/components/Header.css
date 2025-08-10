@@ -1,20 +1,16 @@
 .app-header {
     background-color: var(--color-surface);
-    padding: 0.75rem 2rem;
+    padding: 1rem 2rem;
     border-bottom: 1px solid var(--color-border);
     display: flex;
-    flex-wrap: wrap;
-
     justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-
+    gap: 1.5rem;
     transition: background-color 0.2s, border-color 0.2s;
 }
 
 .header-left {
     flex-shrink: 0;
-
 }
 
 .breadcrumb {
@@ -30,8 +26,6 @@
 .header-right {
     display: flex;
     align-items: center;
-    flex-wrap: nowrap;
-
     gap: 1rem;
 }
 
@@ -63,7 +57,6 @@
     color: var(--color-text-primary);
 }
 
-/* This ensures the calendar popup appears above other content */
 .react-datepicker-popper {
     z-index: 10;
 }
@@ -76,7 +69,6 @@
     padding: 0.6rem 1rem;
     cursor: pointer;
     width: 240px;
-
     text-align: center;
 }
 
@@ -123,8 +115,30 @@
     background-color: var(--color-surface-hover);
 }
 
-@media (max-width: 1200px) {
+/* --- RESPONSIVE STYLES FOR MOBILE --- */
+@media (max-width: 992px) {
     .app-header {
+        flex-direction: column;
+        align-items: stretch;
+        /* Make items take full width */
+    }
+
+    .header-right {
+        flex-wrap: wrap;
+        /* Allow items to wrap onto the next line */
         justify-content: center;
+    }
+
+    .search-bar {
+        flex-grow: 1;
+        /* Allow search bar to take available space */
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .date-picker-wrapper .date-picker-input {
+        width: 100%;
     }
 }
